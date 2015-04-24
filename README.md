@@ -5,3 +5,5 @@ The requirements are written in [Gherkin](https://github.com/cucumber/cucumber/w
 
 Live collabration is currently at [etherpad.net](https://etherpad.net/p/userstories)
 > Keep in mind that copying out of etherpad does not maintain the tabbing.
+
+At some point down the road we may also use these requirements to generate acceptance tests using [PioneerJs](http://pioneerjs.com/)
