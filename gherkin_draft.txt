@@ -1,0 +1,186 @@
+This is a list of user stories describing the tS app.
+
+"As a <role>, I want <goal/desire> so that <benefit>"
+
+-----------------------
+
+Feature: View list of projects
+  Translators will be able to choose projects for translation from the project library.
+  There will be at least one project in the project list.
+  The latest list of projects at the time of the build will be packaged with the app.
+
+Scenario: There are projects
+  Given I have opened the app
+  When I open the list of projects
+  Then I want to see at least one project
+
+Feature: Download new and updated projects
+  Translators will be able to download new projects and update existing ones
+  from the download interface. 
+
+  Background:
+    Given I am online
+
+  Scenario: Confirmation
+    Given I am viewing the download interface
+    When I check for updates
+    Then I want to see a confirmation beforehand
+    
+  Scenario: Confirmed check for updates
+    Given I check for updates
+    When I have confirmed I want to check for updates
+    Then I want  new or updated projects available on the server
+
+Feature: Project Details
+  Scenario: Browse
+    Given I am viewing the list of new or updated projects available on the server
+    When I open a project
+    Then I want to see the project details and a list of available source langauges and translation drafts
+    
+  Scenario: Download Source Language
+    Given I am viewing the details of a project
+    When I select a Source Language
+    Then I want to download the Source Language
+    
+  Scenario: Download Translation Draft
+    Given I am viewing the details of a project
+    When I open a Translation Draft
+    Then I want to download the Translation Draft
+    
+  Scenario: Download All Projects
+    Given I am viewing the list of new or updated projects available on the server
+    When I download all projects
+    Then I want all the project Source Languages but not the Translation Drafts
+
+Feature: View chapters within a project
+  Each project has at least one chapter.
+
+  Scenario: Selecting a chapter
+    Given I have a list of projects
+    When I select a project
+    Then I want a list of chapters in that project
+
+Feature: View frames within a chapter
+  A frame is a small chunk of text of a chapter.
+  Methodology is that it's better to translate a chunk at a time.
+  Each chapter has at least one frame.
+  
+  Scenario: Listing frames
+    Given I have selected a project
+    When I click on a chapter from the library
+    Then I want a list of frames in that chapter
+
+Feature: View source text for a frame
+  The source text is the "gateway" text or source language.
+  The source language is at a checking level of 3.
+  
+  Scenario: Selecting a frame
+    Given I have selected a chapter
+    When I select a frame
+    Then I want to view the source text for that frame
+
+Feature: Open library
+  The project library will be accessible to the user in a number of different ways
+  
+  Scenario: Initial run
+    Given I have a fresh install of the app
+    When I open the app for the first time
+    Then I want to see the project library
+    
+  Scenario: Swipe
+    Given I have opened the app
+    When I swipe from the left
+    Then I want to see the project library
+    
+  Scenario: Menu
+    Given I have opened the app
+    When I choose the library button from the menu
+    Then I want to view the project library
+
+Feature: View translation resources
+  Each project may have a set of translation resources to assist translators in translating
+  from the Source Lanuage.
+
+  Scenario: Swipe
+    Given I am viewing a frame
+    When I swipe from the right
+    Then I want to see the translation resources for the current frame
+    
+  Scenario: Menu
+    Given I am viewing a frame
+    When I click on the resources button from the menu
+    Then I want to see the translation resoruces for the current frame
+
+Feature: View translation notes
+  Translation notes give translators some context around key phrases within the passage.
+  These notes will also be displayed by default in the translation resources.
+  
+  Background:
+    Given I have selected a frame
+      And the frame has translation notes
+    
+  Scenario: Open translation resources
+    Given I have just opened the translation resources drawer
+    When I click on the translation notes tab
+    Then I want to see the translation notes
+
+Feature: Key Terms
+  Key terms provide translators with definitions for important terms within the text
+  
+  Background:
+    Given I have selected a frame
+      And the frame contains key terms
+    
+  Scenario: Click on Key term link in Source Text
+    Given I am viewing the main activity
+    When I click on a key term in the Source text
+    Then I want to see the key term details
+    
+  Scenario: View list of key terms
+    Given I am viewing the translation resources
+    When I have clicked on the key terms tab
+    Then I want to see a list of key terms found in the current frame
+
+  Scenario: View key term details
+    Given I am viewing the list of key terms
+    When I click on a key term
+    Then I want to see the key term details
+    
+  Scenario: Return to important terms list
+    Given I am viewing details on a key term
+    When I click on the "return to key terms" button
+    Then I want to see the list of key terms found in the current frame
+    
+  Scenario: View related key term
+    Given I am viewing details on a key term
+    When I click on a related key term link
+    Then I want to view the details on the selected key term
+
+  Scenario: View example text
+    Given I am viewing details on a key term
+    When I click on an example passage
+    Then I want to see the translation source for that passage
+    
+
+# TODO:
+Contextual Menu
+Frame navigation (swiping)
+Translating
+Verse numbers
+Passage notes
+Project settings
+Chapter settings
+Sharing
+Upload
+Bug report
+Settings
+
+
+
+
+
+
+
+
+
+
