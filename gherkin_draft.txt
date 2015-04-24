@@ -5,182 +5,460 @@ This is a list of user stories describing the tS app.
 -----------------------
 
 Feature: View list of projects
-  Translators will be able to choose projects for translation from the project library.
-  There will be at least one project in the project list.
-  The latest list of projects at the time of the build will be packaged with the app.
-
-Scenario: There are projects
-  Given I have opened the app
-  When I open the list of projects
-  Then I want to see at least one project
-
+	Translators will be able to choose projects for translation from the project library.
+	There will be at least one project in the project list.
+	The latest list of projects at the time of the build will be packaged with the app.
+	
+	Scenario: There are projects
+		Given I have opened the app
+		When I open the list of projects
+		Then I want to see at least one project
+	
 Feature: Download new and updated projects
-  Translators will be able to download new projects and update existing ones
-  from the download interface. 
-
-  Background:
-    Given I am online
-
-  Scenario: Confirmation
-    Given I am viewing the download interface
-    When I check for updates
-    Then I want to see a confirmation beforehand
-    
-  Scenario: Confirmed check for updates
-    Given I check for updates
-    When I have confirmed I want to check for updates
-    Then I want  new or updated projects available on the server
+	Translators will be able to download new projects and update existing ones
+	from the download interface. 
+	
+	Background:
+		Given I am online
+	
+	Scenario: Confirmation
+		Given I am viewing the download interface
+		When I check for updates
+		Then I want to see a confirmation beforehand
+	
+	Scenario: Confirmed check for updates
+		Given I check for updates
+		When I have confirmed I want to check for updates
+		Then I want  new or updated projects available on the server
 
 Feature: Project Details
-  Scenario: Browse
-    Given I am viewing the list of new or updated projects available on the server
-    When I open a project
-    Then I want to see the project details and a list of available source langauges and translation drafts
-    
-  Scenario: Download Source Language
-    Given I am viewing the details of a project
-    When I select a Source Language
-    Then I want to download the Source Language
-    
-  Scenario: Download Translation Draft
-    Given I am viewing the details of a project
-    When I open a Translation Draft
-    Then I want to download the Translation Draft
-    
-  Scenario: Download All Projects
-    Given I am viewing the list of new or updated projects available on the server
-    When I download all projects
-    Then I want all the project Source Languages but not the Translation Drafts
+	Scenario: Browse
+		Given I am viewing the list of new or updated projects available on the server
+		When I open a project
+		Then I want to see the project details and a list of available source langauges and translation drafts
+		
+	Scenario: Download Source Language
+		Given I am viewing the details of a project
+		When I select a Source Language
+		Then I want to download the Source Language
+	
+	Scenario: Download Translation Draft
+		Given I am viewing the details of a project
+		When I open a Translation Draft
+		Then I want to download the Translation Draft
+	
+	Scenario: Download All Projects
+		Given I am viewing the list of new or updated projects available on the server
+		When I download all projects
+		Then I want all the project Source Languages but not the Translation Drafts
 
 Feature: View chapters within a project
-  Each project has at least one chapter.
-
-  Scenario: Selecting a chapter
-    Given I have a list of projects
-    When I select a project
-    Then I want a list of chapters in that project
-
+	Each project has at least one chapter.
+	
+	Scenario: Selecting a chapter
+		Given I have a list of projects
+		When I select a project
+		Then I want a list of chapters in that project
+	
 Feature: View frames within a chapter
-  A frame is a small chunk of text of a chapter.
-  Methodology is that it's better to translate a chunk at a time.
-  Each chapter has at least one frame.
-  
-  Scenario: Listing frames
-    Given I have selected a project
-    When I click on a chapter from the library
-    Then I want a list of frames in that chapter
+	A frame is a small chunk of text of a chapter.
+	Methodology is that it's better to translate a chunk at a time.
+	Each chapter has at least one frame.
+	
+	Scenario: Listing frames
+		Given I have selected a project
+		When I click on a chapter from the library
+		Then I want a list of frames in that chapter
 
 Feature: View source text for a frame
-  The source text is the "gateway" text or source language.
-  The source language is at a checking level of 3.
-  
-  Scenario: Selecting a frame
-    Given I have selected a chapter
-    When I select a frame
-    Then I want to view the source text for that frame
+	The source text is the "gateway" text or source language.
+	The source language is at a checking level of 3.
+
+	Scenario: Selecting a frame
+		Given I have selected a chapter
+		When I select a frame
+		Then I want to view the source text for that frame
 
 Feature: Open library
-  The project library will be accessible to the user in a number of different ways
-  
-  Scenario: Initial run
-    Given I have a fresh install of the app
-    When I open the app for the first time
-    Then I want to see the project library
-    
-  Scenario: Swipe
-    Given I have opened the app
-    When I swipe from the left
-    Then I want to see the project library
-    
-  Scenario: Menu
-    Given I have opened the app
-    When I choose the library button from the menu
-    Then I want to view the project library
+	The project library will be accessible to the user in a number of different ways
 
+	Scenario: Initial run
+		Given I have a fresh install of the app
+		When I open the app for the first time
+		Then I want to see the project library
+	
+	Scenario: Swipe
+		Given I have opened the app
+		When I swipe from the left
+		Then I want to see the project library
+	
+	Scenario: Menu
+		Given I have opened the app
+		When I choose the library button from the menu
+		Then I want to view the project library
+	
 Feature: View translation resources
-  Each project may have a set of translation resources to assist translators in translating
-  from the Source Lanuage.
-
-  Scenario: Swipe
-    Given I am viewing a frame
-    When I swipe from the right
-    Then I want to see the translation resources for the current frame
-    
-  Scenario: Menu
-    Given I am viewing a frame
-    When I click on the resources button from the menu
-    Then I want to see the translation resoruces for the current frame
-
+	Each project may have a set of translation resources to assist translators in translating
+	from the Source Lanuage.
+	
+	Scenario: Swipe
+		Given I am viewing a frame
+		When I swipe from the right
+		Then I want to see the translation resources for the current frame
+		
+	Scenario: Menu
+		Given I am viewing a frame
+		When I click on the resources button from the menu
+		Then I want to see the translation resoruces for the current frame
+		
+	
 Feature: View translation notes
-  Translation notes give translators some context around key phrases within the passage.
-  These notes will also be displayed by default in the translation resources.
-  
-  Background:
-    Given I have selected a frame
-      And the frame has translation notes
-    
-  Scenario: Open translation resources
-    Given I have just opened the translation resources drawer
-    When I click on the translation notes tab
-    Then I want to see the translation notes
+	Translation notes give translators some context around key phrases within the passage.
+	These notes will also be displayed by default in the translation resources.
+	
+	Background:
+		Given I have selected a frame
+			And the frame has translation notes
+	
+	Scenario: Open translation resources
+		Given I have just opened the translation resources drawer
+		When I click on the translation notes tab
+		Then I want to see the translation notes
 
 Feature: Key Terms
-  Key terms provide translators with definitions for important terms within the text
-  
-  Background:
-    Given I have selected a frame
-      And the frame contains key terms
-    
-  Scenario: Click on Key term link in Source Text
-    Given I am viewing the main activity
-    When I click on a key term in the Source text
-    Then I want to see the key term details
-    
-  Scenario: View list of key terms
-    Given I am viewing the translation resources
-    When I have clicked on the key terms tab
-    Then I want to see a list of key terms found in the current frame
+	Key terms provide translators with definitions for important terms within the text
+	
+	Background:
+		Given I have selected a frame
+			And the frame contains key terms
+	
+	Scenario: Click on Key term link in Source Text
+		Given I am viewing the main activity
+		When I click on a key term in the Source text
+		Then I want to see the key term details
+	
+	Scenario: View list of key terms
+		Given I am viewing the translation resources
+		When I have clicked on the key terms tab
+		Then I want to see a list of key terms found in the current frame
+		
+	Scenario: View key term details
+		Given I am viewing the list of key terms
+		When I click on a key term
+		Then I want to see the key term details
+		
+	Scenario: Return to important terms list
+		Given I am viewing details on a key term
+		When I click on the "return to key terms" button
+		Then I want to see the list of key terms found in the current frame
+		
+	Scenario: View related key term
+		Given I am viewing details on a key term
+		When I click on a related key term link
+		Then I want to view the details on the selected key term
+	
+	Scenario: View example text
+		Given I am viewing details on a key term
+		When I click on an example passage
+		Then I want to see the translation source for that passage
+			
+Feature: Contextual menu
+	A contextual menu will be available for translators to provide quick access to 
+	context aware tools.
+	
+	Background:
+		Given I have selected a frame
+			
+	
+	Scenario: Open Menu
+		Given I am viewing the main activity
+		When I click on the contextual menu icon
+		Then I want to see the contextual menu
+	
+Feature: Read Chapter
+	Translators will be able to read through an entire chapter in a source langugae
+	to help them gain a better context of the frame they are translating
+	
+	Background:
+		Given I have selected a frame
+			And I am viewing the main activity
+	
+	Scenario: Open the chapter reader
+		Given I have opened the contextual menu
+		When I click on the read chapter button
+		Then i want to view the source text for the entire chapter.
+	
+Feature: Preview translation
+	Translators will be able to preview their translation work
+	to make sure it all flows well together.
+	
+	Background:
+		Given I have selected a frame
+			And I am viewing the main activity
+	
+	Scenario: Open the translation preview
+		Given I have opened the contextual menu
+		When I click on the preview translation button
+		Then I want to see the translation for the entire chapter
 
-  Scenario: View key term details
-    Given I am viewing the list of key terms
-    When I click on a key term
-    Then I want to see the key term details
-    
-  Scenario: Return to important terms list
-    Given I am viewing details on a key term
-    When I click on the "return to key terms" button
-    Then I want to see the list of key terms found in the current frame
-    
-  Scenario: View related key term
-    Given I am viewing details on a key term
-    When I click on a related key term link
-    Then I want to view the details on the selected key term
+Feature: Blind draft mode
+	Two translation modes will be available to translators. 
+	The default mode has the source on the left and the translation on the right.
+	The blind draft mode will only display the translation.
+	
+	Background:
+		Given I have selected a frame
+			And I am viewing the main activity
+			And I have opened the contextual menu
+	
+	Scenario: Enable blind draft mode
+		Given the blind draft mode is disabled
+		When I click on the "toggle blind draft mode" button
+		Then I want to see the blind draft mode
+	
+	Scenario: Disable blind draft mode
+		Given the blind draft mode is enabled
+		When I click on the "toggle blind draft mode" button
+		Then I want to see the default mode
+		
+Feature: Use translation drafts:
+	Translators will be able to import a translation draft in order to improve or continue
+	the translation. Translation drafts will also be viewed in a read only mode in which case they may be
+	marked as approved by a translator
+	
+	Background:
+		Given I have downloaded the appropriate translation draft from the server
+			And I am viewing the project settings
+			
+		Scenario: Import translation draft
+			Given I have selected the target language that corresponds to the translation draft
+			When I click on the edit draft button
+			Then I want the translation draft to be imported into my current translation work
+			
+		Scenario: View translation draft
+			Given I have selected the target language that corresponds to the translation draft
+			When I click on the view draft button
+			Then I want to view the translation draft in read only mode
+			
+		Scenario: Approve translation draft
+			Given I am viewing the translation draft in read only mode
+			When I click on the approve button
+			I want to generate digital signature that marks the translation draft as approved by myself
+	
+Feature: Frame swipe navigation
+	Translatiosn will be able to quickly move between frames by swiping left or right.
+	
+	Background:
+		Given I have selected a frame
 
-  Scenario: View example text
-    Given I am viewing details on a key term
-    When I click on an example passage
-    Then I want to see the translation source for that passage
-    
+	Scenario: Swipe to next frame
+		Given I am viewing the main activity
+		When I swipe from right to left
+		Then I want to see the next frame
+		
+	Scenario: Swipe to previous frame
+		Given I am viewing the main activity
+		When I swipe from left to right
+		Then i want to see the previous frame
+		
+Feature: Translating
+	Translators will be able to type in their translation of the source text and optionall insert
+	verse markers, notes, etc.
+	
+	Background:
+		Given I have selected a frame
+		
+	Scenario: Enter translation mode
+		Given I am viewing the main frame
+		When I tap on the translation input field
+		Then I want the translation menu to appear
+		
+	Scenario: Insert marker
+		Given I am viewing the main frame
+			And I am in translation mode
+			And the source text supports markers
+		When I click on a marker from the translation menu
+		Then I want the marker to be inserted into the translation at the current cursor position
 
-# TODO:
-Contextual Menu
-Frame navigation (swiping)
-Translating
-Verse numbers
-Passage notes
-Project settings
-Chapter settings
-Sharing
-Upload
-Bug report
-Settings
+	Scenario: Insert note
+		Given I am viewing the main frame
+			And I am in translation mode
+			And the source text supports notes
+			And I have selected text in the translation field
+		When I click on the insert note button
+		Then I want to enter my note that will be attached to the selected text.
+			
+Feature: Auto save
+	The app will automatically save translations
+	
+	Background:
+		Given I have selected a frame
+			And I am viewing the main activity
+	
+	Scenario: Save after a few moments
+		Given I have entered some text into the translation field
+		When I am inactive for a few moments
+		Then I want my changes to be saved
 
+	Scenario: Save when changing frames
+		Given I have entered some text into the translation field
+		When I open a different frame
+		Then I want my changes to be saved
+		
+	Scenario: Save when leaving activity
+		Given I have entered some text into the translation field
+		When I leave the main activity
+		Then I want my changes to be saved
 
+Feature: Project settings
+	Project settings allows translators to change the source language they will be translating from
+	and the target language they will be translating to.
 
+	Scenario: Show when first opening a project
+		Given I have not opened the project before
+		When I open the project
+		Then I want to view the project settings
+		
+	Scenario: Show from the menu
+		Given I have opened the project
+		When I click on the project settings button from the menu
+		Then I want to view the project settings
+		
+	Scenario: Choose source language
+		Given I am viewing the project settings
+		When click on the source language
+		Then I want to view a list of source languages available for this project to choose frame
+		
+	Scenario: Choose target language
+		Given I am viewing the project settings
+		When I click on the target language
+		Then I want to view a list of target languages to choose from
+	
+Feature: Chapter settings
+	Chapter settings allow translators to translate chapter title and reference
+	for projects that support such translations.
+	
+	Background:
+		Given I have opened a project
+			And I am viewing the main activity
+			And the project contains a translatable title and/or reference
+		
+	Scenario: Choosing a frame
+		Given the chapter title and reference have not been translated
+		When I choose a frame from the library
+		Then I want to view the chapter settings
+		
+	Scenario: Show from menu
+		Given the chapter title and reference have not been translated
+		When I click on the chapter settings button from the menu
+		Then I want to view the chapter settings
+	
+Feature: Bug report
+	Translators will be able to submit bug reports to developers when they encounter problems while using the app
+	
+	Background:
+		Given I am viewing the main activity
+	
+	Scenario:
+		Given I have found a bug in the app
+		When I click on the bug report button from the menu
+		Then I want to see the bug report form
 
+Feature: Crash report
+	When the app crashes it will ask users to provide details describing what they were doing when the app crashed.
+	A stack trace along with device information is submitted as a github issue.
+	No personal information is collected.
+	
+	Scenario:
+		Given the app has crashed
+		When I first reopen the app
+		Then I want to see the crash report interface
 
+Feature: Settings
+	Translators can configure a number of different settings in the app to help them in their translation
 
+	Scenario:
+		Given I am viewing the main activity
+		When I click on the settings menu item
+		Then I want to view the app settings
 
+Feature: Sharing interface
+	Translators will be able to manage all of their sharing and importing from the sharing interface
+	
+	Scenario: Show sharing interface
+		Given I am viewing the main activity
+		When I click on the sharing menu item
+		Then I want to view the sharing interface
 
+Feature: Export
+	Translators will be able to export their translations in a number of different formats
+	to a number of different devices
+	Note: currently due to device restrictions exporting to the sd card is performed on the internal storage.
+	
+	Scenario: Export to app
+		Given I am viewing the sharing interface
+		When I click on the export to app menu item
+		Then I want to export the current project to an app of my choice (e.g. email)
+		
+	Scenario: Export to sd card
+		Given I am viewing the sharing interface
+		When I click on the export to sd card menu item
+		Then I want to export the current project to my sd card
 
+	Scenario: Export to device
+		Given I am viewing the sharing interface
+		When I click on the export to device menu item
+		Then I want my translations to be available for download to other devices with the app installed
+		
+Feature: Import
+	Translators will be able to import translations that they will then be able to continue working on.
+	
+	Scenario: Import from sd card
+		Given I am viewing the sharing interface
+		When I click on the import from sd card menu item
+		Then i want to choose a file from my sd card to import
+	
+	Scenario: Open nearby device browsing
+		Given I am viewing the sharing interface
+		When I click on the import from nearby device menu item
+		Then I want to browse devices that are sharing translations
+		
+	Scenario: Import from nearby device
+		Given I am viewing the nearby device interface
+			And I have chosen a device to connect to
+			And the device has approved my connection
+		When I click browse projects
+		Then I want to see a list of projects that I can import
+
+Feature: Publish and Backup
+	Translators will be able to upload their translation to the server and optionally mark it as being ready
+	
+	Scenario: View upload interface
+		Given I am viewing the main activity
+		When I click on the upload menu item
+		Then I want to view the upload interface
+		
+	Scenario: Backup translation
+		Given I am viewing the upload interface
+		When click on the continue button
+		Then I want my translations to be uploaded to the server
+	
+	Scenario: Preview translation before publishing
+		Given I am viewing the upload interface
+			And marked my translation as complete
+		When I click continue
+		Then I want my translation to be analyzed for possible errors
+	
+	Scenario: Provide contact information
+		Given my project has been analyzed for possible errors
+		When I click continue
+		Then I want to enter my contact information
+		
+	Scenarion: Publish translation
+		Given my project has been analyzed for possible errors
+			And I have entered my contact infromation
+		When I click on the ok button
+		Then I want my translation to be uploaded to the server
+	
+	
 
