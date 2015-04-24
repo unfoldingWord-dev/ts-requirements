@@ -18,4 +18,3 @@ There are several practical ways in which these requirements may be used, below 
 
 ##Collaboration
 Live collabration is temporarily at [etherpad.net](https://etherpad.net/p/userstories).
-> Keep in mind that copying out of etherpad does not maintain the tabbing.
