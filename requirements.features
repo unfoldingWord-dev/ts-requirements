@@ -16,7 +16,7 @@ Feature: View list of projects
 	
 Feature: Download new and updated projects
 	Translators will be able to download new projects and update existing ones
-	from the download interface. 
+	from the download interface.
 	
 	Background:
 		Given I am online
@@ -111,7 +111,6 @@ Feature: View translation resources
 		When I click on the resources button from the menu
 		Then I want to see the translation resoruces for the current frame
 		
-	
 Feature: View translation notes
 	Translation notes give translators some context around key phrases within the passage.
 	These notes will also be displayed by default in the translation resources.
@@ -163,7 +162,7 @@ Feature: Key Terms
 		Then I want to see the translation source for that passage
 			
 Feature: Contextual menu
-	A contextual menu will be available for translators to provide quick access to 
+	A contextual menu will be available for translators to provide quick access to
 	context aware tools.
 	
 	Background:
@@ -202,7 +201,7 @@ Feature: Preview translation
 		Then I want to see the translation for the entire chapter
 
 Feature: Blind draft mode
-	Two translation modes will be available to translators. 
+	Two translation modes will be available to translators.
 	The default mode has the source on the left and the translation on the right.
 	The blind draft mode will only display the translation.
 	
@@ -333,7 +332,25 @@ Feature: Project settings
 		Given I am viewing the project settings
 		When I click on the target language
 		Then I want to view a list of target languages to choose from
-	
+
+Feature: Language selector
+	The language selector allows the user to browse, search and choose a spoken language
+	from those available.
+
+	Background:
+		Given I have requested to choose a language (Project settings) or the app is promting me to choose a language
+
+	Scenario: Filter Languages
+		Given I am viewing the language selector
+		When I type in a search query
+		Then I want to view a list of languages that match the search query
+		And I want the results ordered by best match in language code followed by language name
+
+	Scenario: Select language
+		Given I am viewing the language selector
+		When I click on a language in the list
+		Then I want that language to be chosen for use in my current context
+
 Feature: Chapter settings
 	Chapter settings allow translators to translate chapter title and reference
 	for projects that support such translations.
@@ -459,6 +476,3 @@ Feature: Publish and Backup
 			And I have entered my contact infromation
 		When I click on the ok button
 		Then I want my translation to be uploaded to the server
-	
-	
-
