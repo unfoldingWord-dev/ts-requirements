@@ -10,11 +10,4 @@ The requirements are written in [Gherkin](https://github.com/cucumber/cucumber/w
 ##Purpose
 These requirements provide a unified definition of features to be implimented in tS. This allows for more reliable testing, better collaboration, and helps to maintain focus on the long term goals of tS.
 
-##Uses
-There are several practical ways in which these requirements may be used, below are a few for starters
-
-* Unit tests
-* Acceptance testing - [PioneerJs](http://pioneerjs.com/)
-
-##Collaboration
-Live collabration is temporarily at [etherpad.net](https://etherpad.net/p/userstories).
+The practical application of these requirements will be in the establishment of acceptance tests. We will potentially use [PioneerJs](http://pioneerjs.com/) to run these tests.
