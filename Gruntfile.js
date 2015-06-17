@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     concat: {
       options: {
-        separator: '\n\n'
+        separator: '\n\n\n'
       },
       dist: {
         src: ['features/*.feature'],

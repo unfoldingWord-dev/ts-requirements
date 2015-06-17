@@ -1,4 +1,3 @@
-
 Feature: Key Terms
   Key terms provide translators with definitions for important terms within the text
   
