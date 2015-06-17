@@ -20,4 +20,5 @@ Feature: Use translation drafts:
     Scenario: Approve translation draft
       Given I am viewing the translation draft in read only mode
       When I click on the approve button
+        And I provide my password
       I want to generate digital signature that marks the translation draft as approved by myself
