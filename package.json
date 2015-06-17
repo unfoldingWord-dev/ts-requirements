@@ -1,0 +1,26 @@
+{
+  "name": "ts-requirements",
+  "version": "0.0.1",
+  "description": "A set of requirements for the translationStudio project",
+  "main": "features",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:unfoldingWord-dev/ts-requirements.git"
+  },
+  "keywords": [
+    "requirements"
+  ],
+  "author": "Joel Lonbeck",
+  "license": "GNU 2.0",
+  "bugs": {
+    "url": "https://github.com/unfoldingWord-dev/ts-requirements/issues"
+  },
+  "homepage": "https://github.com/unfoldingWord-dev/ts-requirements",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1"
+  }
+}
