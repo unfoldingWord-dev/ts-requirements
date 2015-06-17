@@ -1,5 +1,5 @@
 Feature: Frame swipe navigation
-  Translatiosn will be able to quickly move between frames by swiping left or right.
+  Translations will be able to quickly move between frames by swiping left or right.
   
   Background:
     Given I have selected a frame
@@ -12,4 +12,9 @@ Feature: Frame swipe navigation
   Scenario: Swipe to previous frame
     Given I am viewing the main activity
     When I swipe from left to right
-    Then i want to see the previous frame 
+    Then I want to see the previous frame
+
+  Scenario: Device back button
+    Given I am viewing the main activity
+    When I click on the device back button
+    Then I want to return to the previously selected frame
