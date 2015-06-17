@@ -24,3 +24,14 @@ Feature: Translating
       And I have selected text in the translation field
     When I click on the insert note button
     Then I want to enter my note that will be attached to the selected text.
+
+  Scenario: Enter translation mode for Translation Note
+    Given I am viewing the Translation Notes
+    When I click on the edit button
+    Then I want to enter into translation mode for the Translation Notes
+
+  Scenario: Exit translation mode for Translation Notes
+    Given I am translating the Translation Notes
+    When I click on the ok button
+    Then I want to exit the translation mode for the Translation Notes
+    And save my translations

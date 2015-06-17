@@ -19,3 +19,8 @@ Feature: Auto save
     Given I have entered some text into the translation field
     When I leave the main activity
     Then I want my changes to be saved
+
+  Scenario: Save to external sd card
+    Given I have chosen to save the translations to the sd card.
+    When the auto save is executed
+    Then I want my changes to be saved to the external sd card.

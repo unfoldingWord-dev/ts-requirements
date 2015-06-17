@@ -17,3 +17,13 @@ Feature: Export
     Given I am viewing the sharing interface
     When I click on the export to device menu item
     Then I want my translations to be available for download to other devices with the app installed
+
+  Scenario: Export format
+    Given I choose to export a translation to <format>
+    When the export is complete
+    Then I want a file with the extension <extension>
+
+    Examples:
+      |      format      | extension |
+      | DokuWiki archive |    .zip   |
+      |    tS archive    |  .tstudio |

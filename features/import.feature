@@ -17,3 +17,15 @@ Feature: Import
       And the device has approved my connection
     When I click browse projects
     Then I want to see a list of projects that I can import
+
+  Scenario: Import formats
+    Given I choose a <input> file with the extension <extension>
+    When The import is complete
+    Then I want add any missing projects
+    And update existing projects with the translation
+
+    Examples:
+      |       input      | extension |
+      |    USFM file     |   .usfm   |
+      | DokuWiki archive |    .zip   |
+      |    tS archive    |  .tstudio |
