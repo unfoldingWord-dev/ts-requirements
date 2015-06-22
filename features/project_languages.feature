@@ -1,5 +1,5 @@
-Feature: Project settings
-  Project settings allows translators to change the source language they will be translating from
+Feature: Project Language Settings
+  Project language settings allows translators to change the source language they will be translating from
   and the target language they will be translating to.
 
   Scenario: Show when first opening a project
