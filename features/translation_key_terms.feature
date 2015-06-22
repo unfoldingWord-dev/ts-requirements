@@ -3,7 +3,7 @@ Feature: Key Terms
   
   Background:
     Given I have selected a frame
-      And the frame contains key terms
+    And the frame contains key terms
   
   Scenario: Click on Key term link in Source Text
     Given I am viewing the main activity

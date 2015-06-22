@@ -4,7 +4,7 @@ Feature: View translation notes
   
   Background:
     Given I have selected a frame
-      And the frame has translation notes
+    And the frame has translation notes
   
   Scenario: Open translation resources
     Given I have just opened the translation resources drawer

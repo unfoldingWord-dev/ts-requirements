@@ -3,7 +3,7 @@ Feature: Auto save
   
   Background:
     Given I have selected a frame
-      And I am viewing the main activity
+    And I am viewing the main activity
   
   Scenario: Save after a few moments
     Given I have entered some text into the translation field

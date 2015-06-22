@@ -4,7 +4,7 @@ Feature: Preview translation
   
   Background:
     Given I have selected a frame
-      And I am viewing the main activity
+    And I am viewing the main activity
   
   Scenario: Open the translation preview
     Given I have opened the contextual menu

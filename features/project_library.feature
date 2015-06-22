@@ -1,6 +1,9 @@
 Feature: Open library
   The project library will be accessible to the user in a number of different ways
 
+  Background:
+    Given the project library contains at least one project
+
   Scenario: Initial run
     Given I have a fresh install of the app
     When I open the app for the first time

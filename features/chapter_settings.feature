@@ -4,8 +4,8 @@ Feature: Chapter settings
   
   Background:
     Given I have opened a project
-      And I am viewing the main activity
-      And the project contains a translatable title and/or reference
+    And I am viewing the main activity
+    And the project contains a translatable title and/or reference
     
   Scenario: Choosing a frame
     Given the chapter title and reference have not been translated

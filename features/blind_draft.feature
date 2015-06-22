@@ -5,8 +5,8 @@ Feature: Blind draft mode
   
   Background:
     Given I have selected a frame
-      And I am viewing the main activity
-      And I have opened the contextual menu
+    And I am viewing the main activity
+    And I have opened the contextual menu
   
   Scenario: Enable blind draft mode
     Given the blind draft mode is disabled

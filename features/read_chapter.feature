@@ -4,7 +4,7 @@ Feature: Read Chapter
   
   Background:
     Given I have selected a frame
-      And I am viewing the main activity
+    And I am viewing the main activity
   
   Scenario: Open the chapter reader
     Given I have opened the contextual menu

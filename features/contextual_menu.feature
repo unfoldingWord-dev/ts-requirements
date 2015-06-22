@@ -3,8 +3,7 @@ Feature: Contextual menu
   context aware tools.
   
   Background:
-    Given I have selected a frame
-      
+    Given I have selected a frame  
   
   Scenario: Open Menu
     Given I am viewing the main activity

@@ -13,8 +13,8 @@ Feature: Import
     
   Scenario: Import from nearby device
     Given I am viewing the nearby device interface
-      And I have chosen a device to connect to
-      And the device has approved my connection
+    And I have chosen a device to connect to
+    And the device has approved my connection
     When I click browse projects
     Then I want to see a list of projects that I can import
 
