@@ -1,7 +1,7 @@
 # tS Requirements
 These are the requirements and specifications for translationStudio. The projects using these requirements are
 
-* [tS Android]https://github.com/unfoldingWord-dev/ts-android)
+* [tS Android](https://github.com/unfoldingWord-dev/ts-android)
 * [tS Desktop](https://github.com/unfoldingWord-dev/ts-desktop)
 
 ##Format
