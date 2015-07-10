@@ -8,3 +8,9 @@ Feature: Auto backup
     When some period of time passes
     Then I want my translations to be backed up
       And I want to be notified that the backup has occured.
+
+  Scenario: Restore from backup
+    Given a backup of my translations has been made
+      And I have opened the sharing view
+    When I choose to import a project
+    Then I want to be able to select a backup file to import
