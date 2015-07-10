@@ -15,3 +15,9 @@ Feature: Bug report
       And I have not entered any notes
       And there there are no error messages in the log
     Then I want to be prompted to describe what the problem is.
+
+  Scenario:
+    Given I have opened the bug report form
+    When I click on the submit button
+      And I have entered less than three words.
+    Then I want to be prompted to provide more detail about the problem.
