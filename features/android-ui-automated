@@ -1,0 +1,7 @@
+test00SimpleStartToTranslate //navigate from terms to begining translation
+test01AutoSaveByTime
+  unimplemented: test02AutoSaveByFrameChange
+  unimplemented: test03AutoSaveByLeaving
+  unimplemented: test04AutoSaveExternal //Need a device that supports writing to external
+test05EnableDisableBlindDraftMode
+test06TestFrameSwipeNavigation
