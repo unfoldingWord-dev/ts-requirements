@@ -4,6 +4,7 @@ These are the requirements and specifications for translationStudio. The project
 
 * [tS Android](https://github.com/unfoldingWord-dev/ts-android)
 * [tS Desktop](https://github.com/unfoldingWord-dev/ts-desktop)
+* [tS Server](https://github.com/unfoldingWord-dev/ts-server)
 
 ##Format
 The requirements are written in [Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin) so that they can be ran through [Cucumber](https://cukes.info/). You can also read about Gherkin at [Behat](http://docs.behat.org/en/latest/guides/1.gherkin.html). The documentation there is a little cleaner.
